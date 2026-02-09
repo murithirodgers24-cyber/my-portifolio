@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodgers web</title>
+  <style>
+    /* =================== SERVICES PAGE CSS (ADDED) =================== */
+    .services .services-section {
+      width: 100%;
+      max-width: 1200px;
+      padding: 60px 20px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .services .services-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #111;
+    }
+
+    .services .image-banner {
+      width: 100%;
+      height: 450px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .services .image-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #e0e0e0;
+    }
+
+    .services .cards-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: -120px;
+      position: relative;
+      z-index: 10;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .services .card {
+      background: #ffffff;
+      padding: 50px 30px 40px;
+      border-radius: 15px;
+      width: 300px;
+      box-shadow: 0 15px 35px rgba(26, 43, 190, 0.08);
+      transition: transform 0.3s ease;
+    }
+/*
+    .services .card:hover {
+      transform: translateY(-5px);
+    }
+*/
+    .services .icon-box {
+      background: #6b4b4b;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -80px auto 20px;
+      border-radius: 12px;
+      font-size: 28px;
+    }
+
+    .services .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .services .card p {
+      color: blue;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .services .more-btn {
+      text-decoration: none;
+      color: #08d2e0;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      border-bottom: 2px yellow;
+      padding-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .services .cards-container {
+        margin-top: 20px;
+      }
+      .services .image-banner {
+        height: 300px;
+      }
+    }
+
+    /* =================== ORIGINAL CSS (UNCHANGED) =================== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 1rem;
+      z-index: 1000;
+      align-items: center;
+      text-align: center;
+    }
+
+    nav a {
+      position: relative;
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+      margin: 0 15px;
+      display: inline-block;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: whitesmoke;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 100px 20px;
+      min-height:auto;
+      scroll-margin-top: 90px;
+      
+      border: none;
+      margin: 0;
+      box-sizing: border-box;
+      
+      
+    }
+
+#services {
+  padding-bottom: 0px;
+  margin-bottom: 60px;
+  
+}
+
+#contact section {
+  padding: 0;
+}
+
+
+
+#contact h1 {
+  margin-top: 0;
+  font-size: 44px;
+  
+}
+
+
+    
+
+    #home, #about, #contact {
+      background-color: white;
+    }
+
+    #services, #gallery {
+      background-color: whitesmoke;
+    }
+
+    .home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      min-height: 100vh;
+      gap: 40px;
+    }
+
+    .home img {
+      width: 300px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 50px;
+      border: 8px solid #fdd9a0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-text {
+      max-width: 600px;
+      color: black;
+      font-style: normal;
+      font-size: large;
+    }
+
+    .intro-text h2 {
+      font-size: 50px;
+      color: #333;
+    }
+
+    .intro-text h2 span {
+      text-decoration: dotted;
+      text-decoration-color: #58c6f0;
+    }
+
+    .intro-text p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #444;
+      font-style: normal;
+    }
+
+    .highlight {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .contact {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #cfe8f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Container only in contact section */
+#contact .socials {
+  display: flex;
+  gap: 10px;            /* space between icons */
+  margin-top: 20px;     /* spacing from text */
+}
+
+/* Each social link */
+#contact .socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;          /* small size */
+  height: 35px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Icon images inside links */
+#contact .socials a img {
+  width: 20px;          /* smaller icons */
+  height: 20px;
+  display: block;
+}
+
+/* Individual background colors */
+#contact .socials a[href*="facebook"] {
+  background-color: #1877F2; /* Facebook blue */
+}
+
+#contact .socials a[href*="mailto"] {
+  background-color: #DD4B39; /* Email red */
+}
+
+#contact .socials a[href*="wa.me"] {
+  background-color: #25D366; /* WhatsApp green */
+}
+
+/* Hover effect */
+#contact .socials a:hover {
+  transform: scale(1.2);
+  opacity: 0.85;
+}
+ #contact {
+      background-color: black; /* black fantasy background */
+      color:white;
+      font-family: 'Inter', sans-serif;
+      padding: 80px 10%;
+      min-height:100vh;
+      margin-bottom: 0px; /* space to gallery */
+      
+  
+      margin-top: 0;
+      margin: 0;              /* important */
+      overflow: hidden;  
+      display: flow-root;     
+
+    }
+
+
+    .container {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: none;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      overflow: hidden;
+    }
+
+    .contact-section {
+      flex: 1;
+      padding: 30px;
+      
+      background-size: 100%;
+      background-position: inherit;
+      background-repeat: no-repeat;
+    }
+
+    .heading {
+      color: #1e3a8a;
+      font-size: 28px;
+      margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    form input,
+    form textarea {
+      width: 50%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form textarea {
+      width: 50%;
+      resize: vertical;
+    }
+
+    form button {
+      width: auto;
+      background-color: #06b6d4;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #038ca7;
+    }
+
+    .icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .icons img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hero {
+      background-image: url('images/about 1.jpg');
+      background-size: 100%;
+      background-position: 100%;
+      background-repeat: no-repeat;
+      height: 70vh;
+      width: 100%;
+    }
+
+    /* About Section */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      min-height: calc(100vh - 80px);
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 120px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-text {
+      font-style: normal;
+      padding:10px 20px;
+      max-width: 550px;
+      font-size: large;
+      line-height: normal;
+      color: black;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .about-text p {
+      font-size: inherit;
+      line-height: 1.3;
+      color: #555;
+    }
+
+    .tab-titles {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0 40px;
+    }
+
+    .cta-button {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: #28a745;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #143b83;
+    }
+
+    /* --- SERVICES SECTION --- */
+     .services .cards-container { 
+      display: flex;
+       gap: 30px; 
+       flex-wrap: wrap;
+      justify-content: center;
+       margin-top: 20px; 
+      }
+    .services .card {
+       background: #fff;
+        padding: 50px 30px 40px;
+         border-radius: 15px; 
+         width: 200px;
+         height: 100px;
+         
+           text-align: center;
+           }
+    .services .icon-box { 
+      font-size: 28px; 
+      margin-bottom: 20px;
+      padding: 20px 15px;
+      background-color:#1abc9c;
+     }
+     .services a{
+      text-decoration: none;
+      color: inherit;
+      display: block;
+     }
+     #services {
+  padding-bottom: 180px;
+}
+
+    .services .more-btn { 
+      text-decoration: none; 
+      color: #08d2e0; 
+      font-weight: 800; 
+      font-size: 0.85rem;
+     }
+     .services h1{
+      text-align: center;
+      font-size:48px;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color:cadetblue
+     }
+
+
+    /* --- ADVANCED GALLERY CSS --- */
+
+    .gallery-container {
+      padding: 80px 20px;
+      background-color: whitesmoke;
+      min-height: 100vh;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card:hover {
+      background: rgba(235, 235, 30, 0.4);
+    }
+
+    .download-btn {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: black;
+      color: white;
+      padding: 5px 12px;
+      font-size: 14px;
+      border-radius: 5px;
+      display: none;
+      text-decoration: none;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: greenyellow;
+    }
+
+    .card:hover .download-btn {
+      display: block;
+    }
+    
+/* Overlay content style */
+.about-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 90%;
+  max-width: 700px;
+  background-color: rgb(62, 219, 62) ;
+  color:white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 9999;
+}
+
+.about-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Close button */
+.about-overlay .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.about-overlay .close-btn:hover {
+  background:rgb(62, 219, 62) ;
+}
+
+/* Buttons */
+.about-text .buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.about-text .buttons button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #3498db, #28a745);
+  color: white;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.about-text .buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-text .buttons button.active {
+  background: #143b83;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <section class="home" id="home">
+    <img src="jay m.jpg" alt="my profile pic" />
+    <div class="intro-text">
+      <h2>Hey Friends<span>👋</span></h2>
+      <span>MY NAME IS RODGERS MURITHI FROM KENYA</span>
+      <p>
+        a passionate <em class="highlight">Tech Enthusiast </em>. Who likes building cool
+        things, exploring AI, and always chasing the next big idea!
+      </p>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+  <div class="about-image">
+    <img src="about 1.jpg" alt="About Us Image" />
+  </div>
+
+  <div class="about-text" style="margin-top: 15px;">
+    <h2>About me</h2>
+
+    <p>
+      Hi, I'm Rodgers Murithi, a passionate and driven Computer Science Student
+      at <b>South Eastern kenya University (SEKU)</b>. I specialize in developing
+      <i>web applications that blend powerful backend logic with sleek,
+      user-friendly fronted designs.</i>
+    </p>
+
+    <p>
+      Whether designing intrusive interfaces in React, building scalable APIs
+      with Node.js, or integrating mobile payment, I enjoy crafting solutions
+      that make life easier, more secure, and connected.
+    </p>
+
+    <p>
+      When I'm not coding, you'll find me exploring new tech trends,
+      brainstorming fresh ideas, collaborating with fellow developers to bring
+      visions to life, watching movies, gaming, and venturing to new places.
+      <small>Let's build the future—one line of code at a time</small>
+    </p>
+<!-- TAB BUTTONS -->
+<div class="buttons">
+  <button data-target="skills">Skills</button>
+  <button data-target="experience">Experience</button>
+  <button data-target="education">Education</button>
+  <button data-target="projects">Projects</button>
+</div>
+
+<!-- OVERLAY CONTENTS -->
+<div id="skills" class="about-overlay">
+  <button class="close-btn">&times;</button>
+  <h2>Skills</h2>
+  <h3>Computer Skills</h3>
+  <ul>
+    <li>Excel</li>
+    <li>Access</li>
+    <li>Publisher</li>
+    <li>PowerPoint</li>
+    <li>Word</li>
+    <li>Notepad</li>
+    <li>Typing - Good speed with keyboard</li>
+  </ul>
+
+  <h3>Language Skills</h3>
+  <ul>
+    <li>English</li>
+    <li>Kiswahili</li>
+    <li>Kimeru</li>
+  </ul>
+</div>
+
+<div id="experience" class="about-overlay">
+  <button class="close-btn">&times;</button>
+  <h2>Experience</h2>
+  <h3>2025 – Present</h3> 
+  <ul>
+    <li>Java Programming</li>
+  </ul>
+             
+  <h3>2024 – 2025</h3> 
+  <ul>
+    <li>C++ Programming</li>
+    <li>Python Programming</li>
+  </ul>
+</div>
+
+<div id="education" class="about-overlay">
+  <button class="close-btn">&times;</button>
+  <h2>Education</h2>
+  <h3>University:</h3> 
+  <ul>
+    <li>South Eastern Kenya University</li>
+    <li>Bachelor of Science in Computer Science.</li>
+    <li>2024 – present.</li>
+  </ul>                 
+                                       
+                                        
+
+<h3>Secondary:</h3>
+<ul>
+  <li>GEETO MIXED DAY  SECONDARY SCHOOL</li>
+  <li>Kenya Certificate of Secondary Education [AGP 50(C+)]</li>
+  <li>2019 -2024</li>
+</ul>
+
+<h3>Primary:</h3>
+<ul>
+  <li>GEETO PRIMARY SCHOOL</li>
+  <li>Kenya Certificate of Primary Education [Total Marks(229)]</li>
+  <li>2008 – 2018</li>
+</ul>
+
+</div>
+
+<div id="projects" class="about-overlay">
+  <button class="close-btn">&times;</button>
+  <h2>Projects</h2>
+  <h3>Farming Management System</h3>
+  <p>
+    I have developed a Farming Management System that helps 
+    farmers manage their farms more efficiently.I modern days agriculture
+    is becoming more and more complex with the increasing demand for food
+    production and the need to optimize resources. This system provides
+    tools for planning, monitoring, and analyzing farm activities.It allows farmers
+    to add crops, track growth stages by entering planting and harvesting dates,
+    manage resources, and generate reports.
+  </p>
+  <h3>My Personal Portfolio Website</h3>
+  <p>
+    I have created my personal portfolio website to showcase my skills,
+    projects, and experiences as a computer science student. The website
+    features a clean and modern design, with sections for my about me,
+    services, contact information, and a gallery of my work. It is
+     fully responsive to ensure it looks great on all devices.
+</div>
+
+  <script>
+    const buttons = document.querySelectorAll('.about-text .buttons button');
+const overlays = document.querySelectorAll('.about-overlay');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.dataset.target;
+    const targetOverlay = document.getElementById(targetId);
+
+    // Hide all overlays first
+    overlays.forEach(overlay => overlay.classList.remove('show'));
+
+    // Show the clicked overlay
+    targetOverlay.classList.add('show');
+
+    // Update button active state
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+
+// Close button functionality
+document.querySelectorAll('.about-overlay .close-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.parentElement.classList.remove('show');
+    buttons.forEach(button => button.classList.remove('active'));
+  });
+});
+
+// Optional: click outside to close
+overlays.forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if(e.target === overlay){
+      overlay.classList.remove('show');
+      buttons.forEach(button => button.classList.remove('active'));
+    }
+  });
+});
+
+  </script>
+
+
+    <a href="#contact" class="cta-button">Get In Touch</a>
+    
+  </div>
+</section>
+
+
+  <!-- ===== SERVICES SECTION ===== -->
+<section class="services" id="services">
+  <header class="serve">
+      <h1>My Services</h1>
+      
+    </header>
+    <div class="cards-container">
+      <div class="card">
+       <a href="web development.html" class="develop"><div class="icon-box">💻</div>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JS, React, Node.js.</p>
+        </div>
+      </a>
+      <div class="card">
+        <div class="icon-box">🎨</div>
+        <h3>UI/UX Design</h3>
+        <p>Modern and intuitive interfaces.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box">🔗</div>
+        <h3>API & Payment Integration</h3>
+        <p>M-Pesa & secure APIs.</p>
+      </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section id="contact" >
+  <div class="wrapper">
+    <!-- Left Content -->
+    <div class="content-left">
+      <section>
+        <h1>Get in Touch</h1>
+        <p class="description">
+          Currently open to new opportunities and collaborations. Whether you have a project in mind, want to discuss potential partnerships, or just want to say hi, feel free to reach out! I'm always excited to connect with like-minded individuals and explore how we can work together to create something amazing. Don't hesitate to drop me a message – let's start a conversation and see where it leads!
+        </p>
+      </section>
+
+      <section style="margin-top: 60px;">
+        <h1>Follow Rodgers</h1>
+        <div class="socials">
+          <a href="https://www.facebook.com/ronja.ronjas" target="_blank" title="Facebook">
+            <img src="facebook logo.webp" alt="Facebook" />
+          </a>
+          <a href="mailto:murithirodgers928@gmail.com" title="Email">
+            <img src="email logo.png" alt="Email" />
+          </a>
+          <a href="https://wa.me/254718423652" title="WhatsApp">
+            <img src="whatsup logo.png" alt="WhatsApp" />
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <div class="form-section">
+  <form id="contact_form">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" id="form_name" required>
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" id="form_email" required>
+    </div>
+    <div class="field lines">
+      <label>How Can I Help?</label>
+      <input type="text" id="form_message" required>
+    </div>
+
+    <div class="sword-next-to-button" style="display: flex; align-items: center; margin-top: 15px;">
+      <button type="submit" class="btn-box">submit</button>
+      
+      <div class="sword-container" style="display: flex; flex-direction: column; align-items: center; margin-left: 20px;">
+        <svg class="sword-svg" viewBox="0 0 60 250" fill="none" stroke="white" stroke-width="1.5" style="width: 32px; filter: drop-shadow(0 0 4px #1abc9c); margin-bottom: 8px;">
+          <path d="M30 240 L30 60 M15 70 Q30 85 45 70 M20 65 L40 65 M30 50 L30 10 L25 20 L35 20 L30 10" />
+          <circle cx="30" cy="55" r="4" />
+          <path d="M22 80 L38 80 M30 80 L30 220" stroke-dasharray="2 2" />
+        </svg>
+        
+        <button type="button" class="back-to-top">back to top ^</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+  <!-- CONTACT CSS -->
+  <style>
+   
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      align-items: start;
+    }
+    .content-left section{
+      padding:0;
+      height: auto;
+      min-height: 0;
+      margin-bottom: 30px;
+      margin: 0;
+    }
+    .content-left section:last-child {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'UnifrakturMaguntia', serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: aqua;
+      max-width: 420px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    .form-section { display: flex; flex-direction: column; gap: 30px; }
+    .field { border-bottom: 1.5px solid #fff; padding-bottom: 8px; position: relative; }
+    .field label { display: block; font-size: 1.1rem; color: #aaa; margin-bottom: 5px; font-weight: 500; }
+    .field input { background:black; border: none; color: #fff; width: 100%; font-size: 1.05rem; padding: 10px ; outline: none; transition: 0.3s; }
+
+    .field.lines::after { content: ""; position: absolute; bottom: 0; right: 0; width: 50px; height: 1px; border-bottom: 1px dashed #fff; }
+
+    .btn-box { border: 1.5px solid #fff; padding: 12px 15px; font-weight: 600; text-transform: lowercase; cursor: pointer; background: transparent; color: #fff; font-size: 1rem; transition: all 0.3s ease; align-self: flex-start; }
+    .btn-box:hover { background: #1abc9c; border-color: #1abc9c; color: #111; }
+
+    .sword-container { display: flex; flex-direction: column;gap: 5px; align-items: center; margin-left: 20px; }
+    .sword-next-to-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;          /* space between submit and sword container */
+  flex-wrap: nowrap;   /* prevent wrapping to vertical */
+  margin-top: 15px;
+  flex-direction: row !important; /* horizontal layout */
+}
+    .sword-svg { width: 32px; filter: drop-shadow(0 0 4px #1abc9c); margin-bottom: 8px; }
+
+    .back-to-top { border: 2.0px solid #fff; font-size: 0.85rem; font-weight: 600; background: transparent; color: #fff; cursor: pointer; border-radius: 6px; transition: 0.3s;padding: 8px 15px;white-space: nowrap; }
+    .back-to-top:hover { background: #1abc9c; border-color: #1abc9c; color: #111; }
+
+    .socials { display: flex; gap: 15px; margin-top: 20px; }
+    .socials a img { width: 35px; height: 35px; object-fit: contain; }
+
+    @media (max-width: 900px) {
+      .wrapper { grid-template-columns: 1fr; gap: 40px; }
+      .sword-next-to-button { flex-direction: column; margin-left: 0; margin-top: 20px; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .socials { flex-wrap: wrap; justify-content: flex-start; gap: 10px; }
+      .socials a img { width: 30px; height: 30px; }
+    }
+  </style>
+
+  
+</section>
+
+
+
+
+  <section class="gallery-container" id="gallery">
+    <h1 
+    style="text-align: center; margin-bottom:
+     15px;font-size: 42px;font-family: 'UnifrakturMaguntia', serif;
+     color:#2c3e50;">My Fun Gallery</h1>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <script>
+    const images = [
+      "pic1.jpg",
+      "pic2.jpg",
+      "pic3.jpg",
+      "pic4.jpg",
+      " pic5.jpg",
+    ];
+
+    const gallery = document.getElementById("galleryGrid");
+
+    images.forEach((img) => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${img}" alt="Gallery Image" />
+        <a class="download-btn" href="${img}" download>Download</a>
+      `;
+
+      gallery.appendChild(card);
+    });
+
+   
+  
+  
+</script>
+<script>
+ 
+  // --- CUSTOM SLOW SCROLL FUNCTION ---
+  function slowScrollTo(yTarget) {
+    const startPos = window.pageYOffset;
+    const distance = yTarget - startPos;
+    const duration = 2000; // 2 seconds
+    let start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percentage = Math.min(progress / duration, 1);
+      
+      // Smooth easing formula
+      const easing = percentage < 0.5 
+        ? 2 * percentage * percentage 
+        : -1 + (4 - 2 * percentage) * percentage;
+
+      window.scrollTo(0, startPos + (distance * easing));
+      
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  // --- NAV LINK CLICKS ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        // Offset by 80px to account for the fixed nav bar
+        slowScrollTo(targetSection.offsetTop);
+      }
+    });
+  });
+
+  // --- FIXED BACK TO TOP BUTTON ---
+  const backToTopBtn = document.querySelector('.back-to-top');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      slowScrollTo(0); // Targets the absolute top of the page
+    });
+  }
+
+  // --- WELCOME ALERT ---
+  window.onload = function () {
+    alert("Hey welcome to Rodgers Murithi Official web! Enjoy browsing 😊");
+  };
+</script>
+<script>
+  const contactForm = document.getElementById('contact_form');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Stop the page from refreshing
+
+    // Gather data from inputs
+    const payload = {
+      name: document.getElementById('form_name').value,
+      email: document.getElementById('form_email').value,
+      message: document.getElementById('form_message').value
+    };
+
+    try {
+      // Send the data to your Node server running on port 5000
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Rodgers will checking it🙂!");
+        contactForm.reset(); // Clear the form
+      } else {
+        alert("Server Error: " + data.error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to connect to server. Did you run 'node server.js'?");
+    }
+  });
+</script>
+
+</body>
+</html>
